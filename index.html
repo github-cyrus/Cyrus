@@ -240,46 +240,154 @@
         }
 
         .cert-card, .achieve-card {
-            text-align: left;
+            text-align: center;
             padding: 25px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
-        .cert-item, .achieve-item {
-            padding: 20px;
-            border-radius: 10px;
+        .cert-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 25px 20px;
+            background: rgba(105, 90, 166, 0.03);
+            border-radius: 15px;
             margin-bottom: 20px;
             transition: all 0.3s ease;
-            background: rgba(105, 90, 166, 0.03);
         }
 
-        .cert-content, .achieve-content {
+        .cert-content {
             display: flex;
-            align-items: flex-start;
-            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
         }
 
-        .cert-content i, .achieve-content i {
-            font-size: 2rem;
-            padding: 15px;
+        .cert-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: rgba(105, 90, 166, 0.1);
-            border-radius: 10px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .cert-icon i {
+            font-size: 24px;
             color: #695aa6;
         }
 
-        .cert-content div, .achieve-content div {
-            flex: 1;
+        .cert-details {
+            margin-bottom: 20px;
+            width: 100%;
         }
 
-        .cert-content h6, .achieve-content h6 {
-            margin-bottom: 8px;
+        .cert-details h6 {
             font-size: 1.1rem;
             color: #333;
+            margin-bottom: 8px;
         }
 
-        .cert-content p, .achieve-content p {
+        .cert-details p {
             color: #666;
-            line-height: 1.5;
-            margin-bottom: 0;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .cert-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 25px;
+            background: #695aa6;
+            color: #fff;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            min-width: 160px;
+        }
+
+        .cert-link:hover {
+            background: #483D8B;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(105, 90, 166, 0.2);
+        }
+
+        .cert-link i {
+            margin-left: 8px;
+            font-size: 0.9em;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .cert-item {
+                padding: 20px 15px;
+            }
+
+            .cert-content {
+                gap: 15px;
+            }
+
+            .cert-icon {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 15px;
+            }
+
+            .cert-icon i {
+                font-size: 20px;
+            }
+
+            .cert-details h6 {
+                font-size: 1rem;
+            }
+
+            .cert-details p {
+                font-size: 0.9rem;
+            }
+
+            .cert-link {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+                min-width: 140px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cert-item {
+                padding: 15px 10px;
+            }
+
+            .cert-content {
+                gap: 12px;
+            }
+
+            .cert-details {
+                margin-bottom: 15px;
+            }
+
+            .cert-link {
+                width: auto;
+                min-width: 120px;
+                padding: 8px 15px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Add smooth transitions */
+        .cert-item,
+        .cert-content,
+        .cert-icon,
+        .cert-link {
+            transition: all 0.3s ease;
         }
 
         .about {
@@ -1663,6 +1771,88 @@
             
             .card-content p {
                 color: #444;
+            }
+        }
+
+        /* Add these styles at the top level to prevent overflow */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Update container styles */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            overflow: hidden;
+        }
+
+        /* Update header styles */
+        .header {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .header-content {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        /* Update about section container */
+        .about-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            overflow: hidden;
+        }
+
+        /* Update profile container */
+        .profile-container {
+            padding: 10px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        /* Update media queries */
+        @media (max-width: 768px) {
+            .container,
+            .about-container {
+                padding: 0 10px;
+            }
+
+            .profile-container {
+                padding: 8px;
+            }
+
+            .about-img-holder {
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container,
+            .about-container {
+                padding: 0 8px;
+            }
+
+            .profile-container {
+                padding: 5px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .container,
+            .about-container {
+                padding: 0 5px;
+            }
+
+            .profile-container {
+                padding: 3px;
             }
         }
     </style>
