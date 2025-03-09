@@ -397,8 +397,8 @@
 
         .about-img-holder {
             position: relative;
-            width: 380px;
-            height: 380px;
+            width: 100%;
+            height: auto;
             margin: 0 auto;
             perspective: 1000px;
             max-width: 100%;
@@ -415,7 +415,7 @@
 
         .about-img {
             width: 100%;
-            height: 100%;
+            height: auto;
             border-radius: 30px;
             object-fit: cover;
             box-shadow: 0 20px 40px rgba(105, 90, 166, 0.2);
@@ -639,18 +639,24 @@
         }
 
         .profile-container {
-            position: sticky;
-            top: 100px;
+            position: relative;  /* Changed from sticky */
+            padding: 15px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;  /* Added gap between elements */
         }
 
         .about-img-holder {
             position: relative;
-            width: 380px;
-            height: 380px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: 350px; /* Added max-width */
+            height: auto;
+            margin: 0;  /* Removed bottom margin */
             perspective: 1000px;
-            max-width: 100%;
             padding: 15px;
+            z-index: 2; /* Added z-index */
         }
 
         .about-img-holder .about-img-inner {
@@ -663,7 +669,7 @@
 
         .about-img {
             width: 100%;
-            height: 100%;
+            height: auto;
             border-radius: 30px;
             object-fit: cover;
             box-shadow: 0 20px 40px rgba(105, 90, 166, 0.2);
@@ -880,9 +886,8 @@
             }
             
             .about-img-holder {
-                width: 320px;
-                height: 320px;
-                padding: 12px;
+                width: 300px;
+                height: 300px;
             }
             
             .tech-stack-grid {
@@ -903,9 +908,14 @@
             }
 
             .about-img-holder {
-                width: 280px;
-                height: 280px;
+                width: 100%;
+                height: auto;
                 padding: 10px;
+            }
+
+            .about-img {
+                width: 100%;
+                height: auto;
             }
 
             .tech-stack-grid {
@@ -1005,9 +1015,14 @@
             }
 
             .about-img-holder {
-                width: 240px;
-                height: 240px;
+                width: 100%;
+                height: auto;
                 padding: 8px;
+            }
+
+            .about-img {
+                width: 100%;
+                height: auto;
             }
 
             .about-description {
@@ -1044,13 +1059,14 @@
 
         @media (max-width: 380px) {
             .about-img-holder {
-                width: 220px;
-                height: 220px;
+                width: 100%;
+                height: auto;
                 padding: 6px;
             }
             
-            .about-img,
-            .about-img-back {
+            .about-img {
+                width: 100%;
+                height: auto;
                 border-radius: 18px;
             }
             
@@ -1156,10 +1172,13 @@
             background: #fff;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            padding: 25px;
-            margin-top: 30px;
-            transition: all 0.3s ease;
+            padding: 30px;
             width: 100%;
+            max-width: 400px; /* Increased from 350px */
+            margin: 0;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
         }
 
         .personal-details-card:hover {
@@ -1197,34 +1216,35 @@
 
         .detail-item {
             display: flex;
-            align-items: center;
-            padding: 10px;
+            flex-direction: column; /* Changed to column layout */
+            padding: 12px;
             background: rgba(105, 90, 166, 0.03);
             border-radius: 8px;
             transition: all 0.3s ease;
+            margin-bottom: 8px; /* Added spacing between items */
         }
 
-        .detail-item:hover {
-            background: rgba(105, 90, 166, 0.08);
-            transform: translateX(5px);
-        }
-
-        .detail-label {
-            min-width: 120px;
+        .detail-item .detail-label {
             font-weight: 600;
             color: #695aa6;
+            margin-bottom: 4px; /* Added space between label and value */
         }
 
-        .detail-value {
+        .detail-item .detail-value {
             color: #555;
+            word-wrap: break-word; /* Ensures text wraps properly */
+            line-height: 1.4;
+            width: 100%; /* Ensures full width is used */
         }
 
         .profile-container {
-            position: sticky;
-            top: 100px;
+            position: relative;  /* Changed from sticky */
+            padding: 15px;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 20px;  /* Added gap between elements */
         }
 
         .about-img-holder {
@@ -1855,6 +1875,84 @@
                 padding: 3px;
             }
         }
+
+        /* Profile section spacing fixes */
+        .profile-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px; /* Increased gap between elements */
+            padding: 20px;
+            width: 100%;
+        }
+
+        .about-img-holder {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            margin: 0;
+            padding: 20px; /* Increased padding */
+            perspective: 1000px;
+            z-index: 2;
+        }
+
+        .personal-details-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px; /* Increased padding */
+            width: 100%;
+            max-width: 350px;
+            margin: 0;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .profile-container {
+                gap: 30px; /* Slightly reduced gap on mobile */
+                padding: 15px;
+            }
+
+            .about-img-holder {
+                padding: 15px;
+            }
+
+            .personal-details-card {
+                padding: 25px;
+            }
+        }
+
+        /* Add these header text styles */
+        .header-content {
+            overflow: visible; /* Changed from hidden */
+        }
+
+        .header-title {
+            position: relative;
+            white-space: nowrap; /* Prevents text wrapping */
+        }
+
+        .header-title .down {
+            font-size: 3rem;
+            display: block;
+            width: auto; /* Allow text to expand naturally */
+            overflow: visible;
+            margin: 15px 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header-title .down {
+                font-size: 2.2rem;
+                white-space: normal; /* Allow wrapping on mobile */
+                line-height: 1.2;
+            }
+        }
     </style>
 
     <!-- Add Particles.js -->
@@ -2213,7 +2311,8 @@
         <div class="header-content container">
             <h1 class="header-title">
                 <span class="up">HI!</span>
-                <span class="down">I am Chandrashekhar</span>
+                <span class="down">I'm</span>
+                <span class="down">Chandrashekhar</span>
             </h1>
             <p class="header-subtitle">Junior Data Scientist</p>
 
@@ -2697,9 +2796,9 @@
                 </div>
                 <div class="col-sm offset-sm-2 offset-md-3">
                     <button class="btn btn-lg my-font btn-light rounded">Hire Me</button>
-                </div>
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div>
     </section> <!-- end of section -->
 
     <!-- contact section -->
