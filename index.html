@@ -4,9 +4,35 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Start your development with Meyawo landing page.">
-    <meta name="author" content="Devcrud">
-    <title>Cyrus Portfolio</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Cyrus - Data Science Portfolio</title>
+    <meta name="title" content="Cyrus - Data Science Portfolio">
+    <meta name="description" content="Portfolio website showcasing data science projects, machine learning models, and analytics solutions by Chandrashekhar Sharma. Expertise in Python, ML, AI, and data visualization.">
+    <meta name="keywords" content="data science, machine learning, AI, portfolio, Python, analytics, visualization, Chandrashekhar Sharma">
+    <meta name="author" content="Chandrashekhar Sharma">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cyrus-portfolio.com/">
+    <meta property="og:title" content="Cyrus - Data Science Portfolio">
+    <meta property="og:description" content="Portfolio website showcasing data science projects, machine learning models, and analytics solutions by Chandrashekhar Sharma.">
+    <meta property="og:image" content="assets/imgs/profile.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cyrus-portfolio.com/">
+    <meta property="twitter:title" content="Cyrus - Data Science Portfolio">
+    <meta property="twitter:description" content="Portfolio website showcasing data science projects, machine learning models, and analytics solutions by Chandrashekhar Sharma.">
+    <meta property="twitter:image" content="assets/imgs/profile.png">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+    
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Backup CDN for Themify Icons -->
@@ -2100,19 +2126,46 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS
+            // Initialize AOS with optimized settings
             AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
+                duration: 500, // Reduced from 800
+                easing: 'ease-out', // Changed from ease-in-out
                 once: true,
-                mirror: false
+                mirror: false,
+                offset: 50, // Added offset to start animations earlier
+                delay: 0 // Default delay set to 0
             });
 
-            // Initialize Particles.js
+            // Lazy load projects
+            const projectContainer = document.querySelector('#portfolio .row');
+            const projects = document.querySelectorAll('.project-card');
+            
+            // Intersection Observer for lazy loading
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '50px'
+            });
+
+            // Apply initial styles and observe projects
+            projects.forEach(project => {
+                project.style.opacity = '0';
+                project.style.transform = 'translateY(20px)';
+                project.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+                observer.observe(project);
+            });
+
+            // Initialize Particles.js with optimized settings
             particlesJS('particles-js', {
                 particles: {
                     number: {
-                        value: 50,
+                        value: 30, // Reduced from 50
                         density: {
                             enable: true,
                             value_area: 800
@@ -2125,23 +2178,23 @@
                         type: 'circle'
                     },
                     opacity: {
-                        value: 0.5,
+                        value: 0.3, // Reduced from 0.5
                         random: false
                     },
                     size: {
-                        value: 3,
+                        value: 2, // Reduced from 3
                         random: true
                     },
                     line_linked: {
                         enable: true,
                         distance: 150,
                         color: '#695aa6',
-                        opacity: 0.4,
+                        opacity: 0.2, // Reduced from 0.4
                         width: 1
                     },
                     move: {
                         enable: true,
-                        speed: 2,
+                        speed: 1, // Reduced from 2
                         direction: 'none',
                         random: false,
                         straight: false,
@@ -2153,12 +2206,10 @@
                     detect_on: 'canvas',
                     events: {
                         onhover: {
-                            enable: true,
-                            mode: 'repulse'
+                            enable: false // Disabled hover effect
                         },
                         onclick: {
-                            enable: true,
-                            mode: 'push'
+                            enable: false // Disabled click effect
                         },
                         resize: true
                     }
@@ -2500,7 +2551,7 @@
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">Email:</span>
-                                <span class="detail-value">itschandu05@gmail.com</span>
+                                <span class="detail-value">cyrus.dev.ds@gmail.com</span>
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">Address:</span>
@@ -2603,10 +2654,10 @@
                             </a>
                         </div>
 
-                        <button class="cv-button" data-aos="fade-up">
+                        <a href="CV.pdf" download class="cv-button" data-aos="fade-up">
                             <i class="ti-download"></i>
                             Download CV
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -2659,7 +2710,7 @@
             <!-- row -->
             <div class="row">
                 <!-- Data Science & Machine Learning Projects -->
-                <div class="col-md-6 mb-4" data-aos="fade-up">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-restaurant text-primary project-icon"></i>
@@ -2680,7 +2731,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-bar-chart text-primary project-icon"></i>
@@ -2701,8 +2752,7 @@
                     </div>
                 </div>
 
-                <!-- Data Visualization & Analytics Projects -->
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-dashboard text-primary project-icon"></i>
@@ -2723,7 +2773,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-shopping-cart text-primary project-icon"></i>
@@ -2744,8 +2794,7 @@
                     </div>
                 </div>
 
-                <!-- AI Applications -->
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-image text-primary project-icon"></i>
@@ -2766,7 +2815,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-comment-alt text-primary project-icon"></i>
@@ -2787,8 +2836,7 @@
                     </div>
                 </div>
 
-                <!-- Additional Projects -->
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="600">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-layers text-primary project-icon"></i>
@@ -2809,7 +2857,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="700">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-pie-chart text-primary project-icon"></i>
@@ -2830,8 +2878,7 @@
                     </div>
                 </div>
 
-                <!-- Additional Projects -->
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="800">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-line-chart text-primary project-icon"></i>
@@ -2852,7 +2899,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="900">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-layout text-primary project-icon"></i>
@@ -2873,7 +2920,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1000">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-database text-primary project-icon"></i>
@@ -2894,7 +2941,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1100">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-cloud text-primary project-icon"></i>
@@ -2915,7 +2962,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1200">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-shield text-primary project-icon"></i>
@@ -2936,7 +2983,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1300">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-mobile text-primary project-icon"></i>
@@ -2957,8 +3004,7 @@
                     </div>
                 </div>
 
-                <!-- Additional Projects -->
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1400">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-world text-primary project-icon"></i>
@@ -2979,7 +3025,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1500">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-paint-bucket text-primary project-icon"></i>
@@ -3000,7 +3046,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1600">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-headphone text-primary project-icon"></i>
@@ -3021,7 +3067,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1700">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-location-arrow text-primary project-icon"></i>
@@ -3042,7 +3088,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1800">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-shopping-cart-full text-primary project-icon"></i>
@@ -3063,7 +3109,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1900">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-pulse text-primary project-icon"></i>
@@ -3084,8 +3130,7 @@
                     </div>
                 </div>
 
-                <!-- Additional Projects -->
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="2000">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-car text-primary project-icon"></i>
@@ -3106,7 +3151,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="2100">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-credit-card text-primary project-icon"></i>
@@ -3127,7 +3172,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="2200">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-announcement text-primary project-icon"></i>
@@ -3148,7 +3193,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="2300">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-game text-primary project-icon"></i>
@@ -3169,7 +3214,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="2400">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-book text-primary project-icon"></i>
@@ -3190,7 +3235,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="2500">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-settings text-primary project-icon"></i>
@@ -3211,8 +3256,7 @@
                     </div>
                 </div>
 
-                <!-- Final Project -->
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="2600">
+                <div class="col-md-6 mb-4">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-world text-primary project-icon"></i>
@@ -3574,7 +3618,7 @@
                                 </div>
                                 <div class="card-content">
                                     <h6>Email</h6>
-                                    <p>itschandu05@gmail.com</p>
+                                    <p>cyrus.dev.ds@gmail.com</p>
                                 </div>
                             </div>
                             <div class="card-hover-effect"></div>
@@ -3619,19 +3663,46 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS
+            // Initialize AOS with optimized settings
             AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
+                duration: 500, // Reduced from 800
+                easing: 'ease-out', // Changed from ease-in-out
                 once: true,
-                mirror: false
+                mirror: false,
+                offset: 50, // Added offset to start animations earlier
+                delay: 0 // Default delay set to 0
             });
 
-            // Initialize Particles.js
+            // Lazy load projects
+            const projectContainer = document.querySelector('#portfolio .row');
+            const projects = document.querySelectorAll('.project-card');
+            
+            // Intersection Observer for lazy loading
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '50px'
+            });
+
+            // Apply initial styles and observe projects
+            projects.forEach(project => {
+                project.style.opacity = '0';
+                project.style.transform = 'translateY(20px)';
+                project.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+                observer.observe(project);
+            });
+
+            // Initialize Particles.js with optimized settings
             particlesJS('particles-js', {
                 particles: {
                     number: {
-                        value: 50,
+                        value: 30, // Reduced from 50
                         density: {
                             enable: true,
                             value_area: 800
@@ -3644,23 +3715,23 @@
                         type: 'circle'
                     },
                     opacity: {
-                        value: 0.5,
+                        value: 0.3, // Reduced from 0.5
                         random: false
                     },
                     size: {
-                        value: 3,
+                        value: 2, // Reduced from 3
                         random: true
                     },
                     line_linked: {
                         enable: true,
                         distance: 150,
                         color: '#695aa6',
-                        opacity: 0.4,
+                        opacity: 0.2, // Reduced from 0.4
                         width: 1
                     },
                     move: {
                         enable: true,
-                        speed: 2,
+                        speed: 1, // Reduced from 2
                         direction: 'none',
                         random: false,
                         straight: false,
@@ -3672,12 +3743,10 @@
                     detect_on: 'canvas',
                     events: {
                         onhover: {
-                            enable: true,
-                            mode: 'repulse'
+                            enable: false // Disabled hover effect
                         },
                         onclick: {
-                            enable: true,
-                            mode: 'push'
+                            enable: false // Disabled click effect
                         },
                         resize: true
                     }
