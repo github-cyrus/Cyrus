@@ -133,14 +133,17 @@
 
         .cert-link,
         .project-link {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 25px;
             background: #695aa6;
             color: #fff;
             border-radius: 25px;
             text-decoration: none;
             transition: all 0.3s ease;
+            margin-top: 15px;
+            min-width: 160px;
         }
 
         .cert-link:hover,
@@ -1953,6 +1956,144 @@
                 line-height: 1.2;
             }
         }
+
+        /* Add these new styles for horizontal layout */
+        .cert-list-horizontal,
+        .achieve-list-horizontal {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #695aa6 #f0f0f0;
+        }
+
+        .cert-list-horizontal::-webkit-scrollbar,
+        .achieve-list-horizontal::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .cert-list-horizontal::-webkit-scrollbar-track,
+        .achieve-list-horizontal::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+
+        .cert-list-horizontal::-webkit-scrollbar-thumb,
+        .achieve-list-horizontal::-webkit-scrollbar-thumb {
+            background: #695aa6;
+            border-radius: 4px;
+        }
+
+        .cert-item-horizontal,
+        .achieve-item-horizontal {
+            flex: 0 0 300px;
+            background: rgba(105, 90, 166, 0.03);
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(105, 90, 166, 0.1);
+        }
+
+        .cert-item-horizontal:hover,
+        .achieve-item-horizontal:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(105, 90, 166, 0.15);
+            border-color: rgba(105, 90, 166, 0.3);
+        }
+
+        .cert-content,
+        .achieve-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+        }
+
+        .cert-content i,
+        .achieve-content i {
+            font-size: 2rem;
+            color: #695aa6;
+            margin-bottom: 10px;
+        }
+
+        .cert-content h6,
+        .achieve-content h6 {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .cert-content p,
+        .achieve-content p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .cert-link {
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: #695aa6;
+            color: #fff;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cert-link:hover {
+            background: #483D8B;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(105, 90, 166, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .cert-list-horizontal,
+            .achieve-list-horizontal {
+                flex-wrap: nowrap;
+                padding: 15px;
+                gap: 15px;
+            }
+
+            .cert-item-horizontal,
+            .achieve-item-horizontal {
+                flex: 0 0 280px;
+                padding: 15px;
+            }
+
+            .cert-content h6,
+            .achieve-content h6 {
+                font-size: 1rem;
+            }
+
+            .cert-content p,
+            .achieve-content p {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cert-item-horizontal,
+            .achieve-item-horizontal {
+                flex: 0 0 250px;
+                padding: 12px;
+            }
+
+            .cert-content i,
+            .achieve-content i {
+                font-size: 1.5rem;
+            }
+
+            .cert-link {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 
     <!-- Add Particles.js -->
@@ -2314,7 +2455,7 @@
                 <span class="down">I'm</span>
                 <span class="down">Chandrashekhar</span>
             </h1>
-            <p class="header-subtitle">Junior Data Scientist</p>
+            <p class="header-subtitle">Aspiring Data Scientist</p>
 
             <button class="btn btn-primary">Visit My Works</button>
         </div>
@@ -2517,90 +2658,578 @@
             <h6 class="section-title mb-6">Featured Projects</h6>
             <!-- row -->
             <div class="row">
+                <!-- Data Science & Machine Learning Projects -->
                 <div class="col-md-6 mb-4" data-aos="fade-up">
                     <div class="project-card">
-                        <img src="assets/imgs/projects/vizpro-dashboard.jpg" alt="VizPro Dashboard" class="project-img">
                         <div class="project-header">
-                            <i class="ti-dashboard text-primary project-icon"></i>
-                            <h5>VizPro: Real-Time Tracking Dashboard</h5>
+                            <i class="ti-restaurant text-primary project-icon"></i>
+                            <h5>Restaurant Recommendation System</h5>
                         </div>
-                        <p class="text-muted mb-2">Final Year Project | 2024 - Present</p>
+                        <p class="text-muted mb-2">Data Science & Machine Learning | 2024</p>
                         <p class="card-text">
-                            • Engineered an end-to-end data platform using Python, Apache Spark, and dbt<br>
-                            • Designed Tableau-based dashboard with 90% accuracy in predictive models<br>
-                            • Implemented ETL pipelines reducing data inconsistencies by 20%
+                            • Built a machine learning-powered recommendation system<br>
+                            • Implemented user preference-based suggestions<br>
+                            • Enhanced user experience through personalized recommendations
                         </p>
                         <div class="mt-3">
+                            <span class="badge">HTML</span>
                             <span class="badge">Python</span>
-                            <span class="badge">Apache Spark</span>
-                            <span class="badge">Tableau</span>
-                            <span class="badge">dbt</span>
+                            <span class="badge">Machine Learning</span>
                         </div>
-                        <a href="#" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
                     </div>
                 </div>
+
                 <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-card">
-                        <img src="assets/imgs/projects/chatbot.jpg" alt="AI Chatbot" class="project-img">
-                        <div class="project-header">
-                            <i class="ti-comment-alt text-primary project-icon"></i>
-                            <h5>AI-Powered Chatbot</h5>
-                        </div>
-                        <p class="text-muted mb-2">Independent Project | 2023</p>
-                        <p class="card-text">
-                            • Built chatbot using Llama 3.1 and Hugging Face with 30% improved accuracy<br>
-                            • Integrated NLP techniques for sentiment analysis and text summarization<br>
-                            • Implemented conversational learning capabilities
-                        </p>
-                        <div class="mt-3">
-                            <span class="badge">Llama 3.1</span>
-                            <span class="badge">Hugging Face</span>
-                            <span class="badge">NLP</span>
-                            <span class="badge">Python</span>
-                        </div>
-                        <a href="#" class="project-link">View Project <i class="ti-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-bar-chart text-primary project-icon"></i>
-                            <h5>Ola Ride Analytics Dashboard</h5>
+                            <h5>Machine Learning Models in Python</h5>
                         </div>
-                        <p class="text-muted mb-2">Portfolio Project | 2023</p>
+                        <p class="text-muted mb-2">Data Science & Machine Learning | 2024</p>
                         <p class="card-text">
-                            • Developed end-to-end analytics solution using SQL, Python, and Power BI<br>
-                            • Improved data processing efficiency by 18%<br>
-                            • Created interactive visualizations for business insights
+                            • Developed various ML models for classification and regression<br>
+                            • Implemented model evaluation techniques<br>
+                            • Strengthened expertise in predictive analytics
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">Python</span>
+                            <span class="badge">Scikit-learn</span>
+                            <span class="badge">TensorFlow</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Data Visualization & Analytics Projects -->
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-dashboard text-primary project-icon"></i>
+                            <h5>Ola Data Analytics Dashboard</h5>
+                        </div>
+                        <p class="text-muted mb-2">Data Visualization & Analytics | 2024</p>
+                        <p class="card-text">
+                            • Processed and analyzed ride-hailing data<br>
+                            • Created interactive Power BI visualizations<br>
+                            • Provided data-driven operational insights
                         </p>
                         <div class="mt-3">
                             <span class="badge">SQL</span>
+                            <span class="badge">Excel</span>
+                            <span class="badge">Power BI</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-shopping-cart text-primary project-icon"></i>
+                            <h5>Amazon Sales Analysis Dashboard</h5>
+                        </div>
+                        <p class="text-muted mb-2">Data Visualization & Analytics | 2024</p>
+                        <p class="card-text">
+                            • Designed interactive sales analytics dashboard<br>
+                            • Analyzed revenue trends and customer segments<br>
+                            • Enabled real-time performance monitoring
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">Power BI</span>
+                            <span class="badge">Data Analysis</span>
+                            <span class="badge">Visualization</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- AI Applications -->
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-image text-primary project-icon"></i>
+                            <h5>Sharpify - Image Upscaling</h5>
+                        </div>
+                        <p class="text-muted mb-2">AI Applications | 2024</p>
+                        <p class="card-text">
+                            • Created image upscaling application<br>
+                            • Implemented Stable Diffusion x4 Upscaler<br>
+                            • Delivered high-quality image enhancements
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">Python</span>
+                            <span class="badge">Stable Diffusion</span>
+                            <span class="badge">AI</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-comment-alt text-primary project-icon"></i>
+                            <h5>AI Crisis Opinion Insights</h5>
+                        </div>
+                        <p class="text-muted mb-2">AI Applications | 2024</p>
+                        <p class="card-text">
+                            • Developed sentiment analysis dashboard<br>
+                            • Implemented topic categorization<br>
+                            • Provided actionable public sentiment insights
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">Python</span>
+                            <span class="badge">NLP</span>
+                            <span class="badge">Sentiment Analysis</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Additional Projects -->
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-layers text-primary project-icon"></i>
+                            <h5>Data Pipeline Automation</h5>
+                        </div>
+                        <p class="text-muted mb-2">Data Engineering | 2024</p>
+                        <p class="card-text">
+                            • Built automated ETL pipelines<br>
+                            • Implemented data quality checks<br>
+                            • Optimized data processing workflows
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">Python</span>
+                            <span class="badge">Apache Airflow</span>
+                            <span class="badge">ETL</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="700">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-pie-chart text-primary project-icon"></i>
+                            <h5>Customer Segmentation Analysis</h5>
+                        </div>
+                        <p class="text-muted mb-2">Data Analysis | 2024</p>
+                        <p class="card-text">
+                            • Performed customer segmentation<br>
+                            • Developed clustering models<br>
+                            • Created targeted marketing strategies
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">Python</span>
+                            <span class="badge">K-means</span>
+                            <span class="badge">Data Analysis</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Additional Projects -->
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="800">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-line-chart text-primary project-icon"></i>
+                            <h5>Time Series Forecasting</h5>
+                        </div>
+                        <p class="text-muted mb-2">Data Science | 2024</p>
+                        <p class="card-text">
+                            • Developed ARIMA and Prophet models<br>
+                            • Implemented seasonal decomposition<br>
+                            • Created accurate demand forecasts
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">Python</span>
+                            <span class="badge">ARIMA</span>
+                            <span class="badge">Prophet</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="900">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-layout text-primary project-icon"></i>
+                            <h5>Web Analytics Dashboard</h5>
+                        </div>
+                        <p class="text-muted mb-2">Web Development | 2024</p>
+                        <p class="card-text">
+                            • Built real-time analytics dashboard<br>
+                            • Integrated Google Analytics API<br>
+                            • Created interactive visualizations
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">JavaScript</span>
+                            <span class="badge">D3.js</span>
+                            <span class="badge">API Integration</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1000">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-database text-primary project-icon"></i>
+                            <h5>Database Optimization</h5>
+                        </div>
+                        <p class="text-muted mb-2">Database Management | 2024</p>
+                        <p class="card-text">
+                            • Optimized database queries<br>
+                            • Implemented indexing strategies<br>
+                            • Improved query performance
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">SQL</span>
+                            <span class="badge">PostgreSQL</span>
+                            <span class="badge">Performance</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1100">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-cloud text-primary project-icon"></i>
+                            <h5>Cloud Data Warehouse</h5>
+                        </div>
+                        <p class="text-muted mb-2">Cloud Computing | 2024</p>
+                        <p class="card-text">
+                            • Designed cloud data warehouse<br>
+                            • Implemented data lake architecture<br>
+                            • Set up ETL pipelines
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">AWS</span>
+                            <span class="badge">Snowflake</span>
+                            <span class="badge">ETL</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1200">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-shield text-primary project-icon"></i>
+                            <h5>Data Security Framework</h5>
+                        </div>
+                        <p class="text-muted mb-2">Data Security | 2024</p>
+                        <p class="card-text">
+                            • Implemented encryption protocols<br>
+                            • Set up access controls<br>
+                            • Created security monitoring system
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">Security</span>
+                            <span class="badge">Encryption</span>
+                            <span class="badge">Access Control</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1300">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-mobile text-primary project-icon"></i>
+                            <h5>Mobile Analytics App</h5>
+                        </div>
+                        <p class="text-muted mb-2">Mobile Development | 2024</p>
+                        <p class="card-text">
+                            • Developed mobile analytics app<br>
+                            • Implemented real-time tracking<br>
+                            • Created user-friendly interface
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">React Native</span>
+                            <span class="badge">Firebase</span>
+                            <span class="badge">Analytics</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Additional Projects -->
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1400">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-world text-primary project-icon"></i>
+                            <h5>Global Market Analysis</h5>
+                        </div>
+                        <p class="text-muted mb-2">Market Analysis | 2024</p>
+                        <p class="card-text">
+                            • Analyzed global market trends<br>
+                            • Created predictive models<br>
+                            • Developed market insights dashboard
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">Python</span>
+                            <span class="badge">Tableau</span>
+                            <span class="badge">Market Analysis</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1500">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-paint-bucket text-primary project-icon"></i>
+                            <h5>Image Processing Pipeline</h5>
+                        </div>
+                        <p class="text-muted mb-2">Computer Vision | 2024</p>
+                        <p class="card-text">
+                            • Built image processing pipeline<br>
+                            • Implemented object detection<br>
+                            • Created automated labeling system
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">OpenCV</span>
+                            <span class="badge">TensorFlow</span>
+                            <span class="badge">Computer Vision</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1600">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-headphone text-primary project-icon"></i>
+                            <h5>Voice Recognition System</h5>
+                        </div>
+                        <p class="text-muted mb-2">Speech Processing | 2024</p>
+                        <p class="card-text">
+                            • Developed voice recognition system<br>
+                            • Implemented speech-to-text<br>
+                            • Created command processing
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">Python</span>
+                            <span class="badge">Speech Recognition</span>
+                            <span class="badge">NLP</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1700">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-location-arrow text-primary project-icon"></i>
+                            <h5>Location Analytics Platform</h5>
+                        </div>
+                        <p class="text-muted mb-2">Geospatial Analysis | 2024</p>
+                        <p class="card-text">
+                            • Built location analytics platform<br>
+                            • Implemented geospatial analysis<br>
+                            • Created interactive maps
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">Python</span>
+                            <span class="badge">Folium</span>
+                            <span class="badge">Geospatial</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1800">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-shopping-cart-full text-primary project-icon"></i>
+                            <h5>E-commerce Analytics</h5>
+                        </div>
+                        <p class="text-muted mb-2">E-commerce | 2024</p>
+                        <p class="card-text">
+                            • Analyzed e-commerce data<br>
+                            • Created sales forecasting<br>
+                            • Developed customer insights
+                        </p>
+                        <div class="mt-3">
                             <span class="badge">Python</span>
                             <span class="badge">Power BI</span>
                             <span class="badge">Analytics</span>
                         </div>
-                        <a href="#" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1900">
                     <div class="project-card">
                         <div class="project-header">
-                            <i class="ti-text text-primary project-icon"></i>
-                            <h5>NLP Sentiment Analysis</h5>
+                            <i class="ti-pulse text-primary project-icon"></i>
+                            <h5>Healthcare Analytics</h5>
                         </div>
-                        <p class="text-muted mb-2">Academic Project | 2022</p>
+                        <p class="text-muted mb-2">Healthcare | 2024</p>
                         <p class="card-text">
-                            • Applied classification models to Amazon reviews dataset<br>
-                            • Achieved 85% accuracy in sentiment prediction<br>
-                            • Implemented text preprocessing and feature engineering
+                            • Analyzed healthcare data<br>
+                            • Created patient insights<br>
+                            • Developed predictive models
                         </p>
                         <div class="mt-3">
-                            <span class="badge">scikit-learn</span>
-                            <span class="badge">NLTK</span>
+                            <span class="badge">Python</span>
+                            <span class="badge">Healthcare</span>
+                            <span class="badge">Analytics</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Additional Projects -->
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="2000">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-car text-primary project-icon"></i>
+                            <h5>Transportation Analytics</h5>
+                        </div>
+                        <p class="text-muted mb-2">Transportation | 2024</p>
+                        <p class="card-text">
+                            • Analyzed transportation data<br>
+                            • Created route optimization<br>
+                            • Developed fleet management
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">Python</span>
+                            <span class="badge">Optimization</span>
+                            <span class="badge">Analytics</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="2100">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-credit-card text-primary project-icon"></i>
+                            <h5>Financial Analytics</h5>
+                        </div>
+                        <p class="text-muted mb-2">Finance | 2024</p>
+                        <p class="card-text">
+                            • Analyzed financial data<br>
+                            • Created risk assessment<br>
+                            • Developed forecasting models
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">Python</span>
+                            <span class="badge">Finance</span>
+                            <span class="badge">Analytics</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="2200">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-announcement text-primary project-icon"></i>
+                            <h5>Social Media Analytics</h5>
+                        </div>
+                        <p class="text-muted mb-2">Social Media | 2024</p>
+                        <p class="card-text">
+                            • Analyzed social media data<br>
+                            • Created sentiment analysis<br>
+                            • Developed engagement metrics
+                        </p>
+                        <div class="mt-3">
                             <span class="badge">Python</span>
                             <span class="badge">NLP</span>
+                            <span class="badge">Analytics</span>
                         </div>
-                        <a href="#" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="2300">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-game text-primary project-icon"></i>
+                            <h5>Gaming Analytics</h5>
+                        </div>
+                        <p class="text-muted mb-2">Gaming | 2024</p>
+                        <p class="card-text">
+                            • Analyzed gaming data<br>
+                            • Created player insights<br>
+                            • Developed engagement metrics
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">Python</span>
+                            <span class="badge">Gaming</span>
+                            <span class="badge">Analytics</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="2400">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-book text-primary project-icon"></i>
+                            <h5>Educational Analytics</h5>
+                        </div>
+                        <p class="text-muted mb-2">Education | 2024</p>
+                        <p class="card-text">
+                            • Analyzed educational data<br>
+                            • Created learning insights<br>
+                            • Developed performance metrics
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">Python</span>
+                            <span class="badge">Education</span>
+                            <span class="badge">Analytics</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="2500">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-settings text-primary project-icon"></i>
+                            <h5>Industrial Analytics</h5>
+                        </div>
+                        <p class="text-muted mb-2">Industry | 2024</p>
+                        <p class="card-text">
+                            • Analyzed industrial data<br>
+                            • Created process optimization<br>
+                            • Developed efficiency metrics
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">Python</span>
+                            <span class="badge">Industry</span>
+                            <span class="badge">Analytics</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Final Project -->
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="2600">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="ti-world text-primary project-icon"></i>
+                            <h5>Environmental Analytics</h5>
+                        </div>
+                        <p class="text-muted mb-2">Environment | 2024</p>
+                        <p class="card-text">
+                            • Analyzed environmental data<br>
+                            • Created climate insights<br>
+                            • Developed sustainability metrics
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge">Python</span>
+                            <span class="badge">Environment</span>
+                            <span class="badge">Analytics</span>
+                        </div>
+                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
                     </div>
                 </div>
             </div><!-- end of row -->
@@ -2612,76 +3241,95 @@
         <div class="container">
             <p class="section-subtitle text-center">Professional Development</p>
             <h6 class="section-title mb-6 text-center">Certifications & Achievements</h6>
-            <div class="row">
-                <div class="col-md-6" data-aos="fade-right">
-                    <div class="cert-card mb-4">
+            
+            <!-- Certifications Row -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="cert-card">
                         <div class="cert-header">
                             <i class="ti-medall-alt text-primary cert-icon"></i>
                             <h5>Certifications</h5>
                         </div>
-                        <div class="cert-list">
-                            <div class="cert-item" data-aos="fade-up">
+                        <div class="cert-list-horizontal">
+                            <div class="cert-item-horizontal" data-aos="fade-up">
                                 <div class="cert-content">
                                     <i class="ti-crown"></i>
                                     <div>
-                                        <h6>Data Science and Machine Learning Specialization</h6>
-                                        <p>Coursera</p>
-                                        <a href="#" class="cert-link">View Certificate <i class="ti-arrow-right"></i></a>
+                                        <h6>Data Science Tools</h6>
+                                        <p>Issuer: Cognitive Class | Issued: March 2025</p>
+                                        <p class="text-muted">Skills: Data Science, Python, R, Jupyter Notebook, Pandas, NumPy, Scikit-learn, TensorFlow, Tableau, Power BI, SQL, Apache Spark</p>
+                                        <a href="https://www.linkedin.com/in/chandrashekhar-sharma-399189337/details/certifications/" class="cert-link">View Certificate <i class="ti-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="cert-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="cert-item-horizontal" data-aos="fade-up" data-aos-delay="100">
                                 <div class="cert-content">
                                     <i class="ti-google"></i>
                                     <div>
-                                        <h6>Google Data Analytics Certificate</h6>
-                                        <p>Google</p>
-                                        <a href="#" class="cert-link">View Certificate <i class="ti-arrow-right"></i></a>
-
+                                        <h6>Deep Learning with TensorFlow</h6>
+                                        <p>Issuer: Cognitive Class | Issued: March 2025</p>
+                                        <p class="text-muted">Skills: Deep Learning, TensorFlow, Neural Networks, AI Model Development</p>
+                                        <a href="https://www.linkedin.com/in/chandrashekhar-sharma-399189337/details/certifications/" class="cert-link">View Certificate <i class="ti-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="cert-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="cert-item-horizontal" data-aos="fade-up" data-aos-delay="200">
                                 <div class="cert-content">
                                     <i class="ti-bar-chart"></i>
                                     <div>
-                                        <h6>Tableau Desktop Specialist Certification</h6>
-                                        <p>Tableau</p>
-                                        <a href="#" class="cert-link">View Certificate <i class="ti-arrow-right"></i></a>
+                                        <h6>Data Visualization with Python</h6>
+                                        <p>Issuer: IBM | Issued: March 2024</p>
+                                        <p class="text-muted">Skills: Python, Matplotlib, Seaborn, Plotly, Data Visualization</p>
+                                        <a href="https://www.linkedin.com/in/chandrashekhar-sharma-399189337/details/certifications/" class="cert-link">View Certificate <i class="ti-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="cert-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="cert-item-horizontal" data-aos="fade-up" data-aos-delay="300">
                                 <div class="cert-content">
                                     <i class="ti-server"></i>
                                     <div>
-                                        <h6>Fundamentals of Data Engineering Masterclass</h6>
-                                        <p>Self-Paced Course</p>
-                                        <a href="#" class="cert-link">View Certificate <i class="ti-arrow-right"></i></a>
+                                        <h6>Problem Solving & Python</h6>
+                                        <p>Issuer: HackerRank | Issued: September 2024</p>
+                                        <p class="text-muted">Skills: Algorithmic Thinking, Problem Solving, Python Programming</p>
+                                        <a href="https://www.linkedin.com/in/chandrashekhar-sharma-399189337/details/certifications/" class="cert-link">View Certificate <i class="ti-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cert-item-horizontal" data-aos="fade-up" data-aos-delay="400">
+                                <div class="cert-content">
+                                    <i class="ti-robot"></i>
+                                    <div>
+                                        <h6>Generative AI</h6>
+                                        <p>Issuer: Great Learning | Issued: March 2024</p>
+                                        <p class="text-muted">Skills: Artificial Intelligence, Generative Models</p>
+                                        <a href="https://www.linkedin.com/in/chandrashekhar-sharma-399189337/details/certifications/" class="cert-link">View Certificate <i class="ti-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6" data-aos="fade-left">
-                    <div class="achieve-card mb-4">
+            </div>
+
+            <!-- Achievements Row -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="achieve-card">
                         <div class="achieve-header">
                             <i class="ti-cup text-primary achieve-icon"></i>
                             <h5>Key Achievements</h5>
                         </div>
-                        <div class="achieve-list">
-                            <div class="achieve-item" data-aos="fade-up">
+                        <div class="achieve-list-horizontal">
+                            <div class="achieve-item-horizontal" data-aos="fade-up">
                                 <div class="achieve-content">
                                     <i class="ti-write"></i>
                                     <div>
                                         <h6>Research Publication</h6>
                                         <p>Published research paper on AI-driven business insights in a reputed journal (2023)</p>
-                                        <!-- <a href="#" class="cert-link">Read Paper <i class="ti-arrow-right"></i></a> -->
                                     </div>
                                 </div>
                             </div>
-                            <div class="achieve-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="achieve-item-horizontal" data-aos="fade-up" data-aos-delay="200">
                                 <div class="achieve-content">
                                     <i class="ti-stats-up"></i>
                                     <div>
@@ -2690,7 +3338,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="achieve-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="achieve-item-horizontal" data-aos="fade-up" data-aos-delay="300">
                                 <div class="achieve-content">
                                     <i class="ti-dashboard"></i>
                                     <div>
@@ -2699,7 +3347,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="achieve-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="achieve-item-horizontal" data-aos="fade-up" data-aos-delay="400">
                                 <div class="achieve-content">
                                     <i class="ti-star"></i>
                                     <div>
@@ -2759,7 +3407,7 @@
                                 <div class="timeline-item" data-aos="fade-up">
                                     <h6>Data Analyst (Freight Analytics)</h6>
                                     <p class="text-muted mb-2">Assurance Freight Pvt. Limited, Mumbai</p>
-                                    <p class="text-muted">June 2023 - September 2023</p>
+                                    <p class="text-muted">January 2025 - Present</p>
                                     <ul class="list-unstyled">
                                         <li>• Analyzed logistics data, reducing processing time by 15%</li>
                                         <li>• Built Power BI dashboards for real-time monitoring</li>
@@ -2769,7 +3417,7 @@
                                 <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
                                     <h6>Freelance Data Scientist & Web Developer</h6>
                                     <p class="text-muted mb-2">Self-Employed</p>
-                                    <p class="text-muted">2022 - Present</p>
+                                    <p class="text-muted">2022 - Occasionally</p>
                                     <ul class="list-unstyled">
                                         <li>• Delivered AI-powered commercial websites</li>
                                         <li>• Developed custom portfolio with data visualizations</li>
