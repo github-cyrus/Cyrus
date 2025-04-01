@@ -50,12 +50,12 @@ A modern, responsive portfolio website showcasing my data science projects, skil
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-portfolio.git
+   git clone https://github.com/github-cyrus/portfolio.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd your-portfolio
+   cd portfolio
    ```
 
 3. Open `index.html` in your browser or use a local server:
@@ -102,11 +102,12 @@ A modern, responsive portfolio website showcasing my data science projects, skil
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Contact
+## 🤝 Contact & Social Media
 
-- Email: cyrus.dev.ds@gmail.com
-- LinkedIn: [Chandrashekhar Sharma](https://www.linkedin.com/in/chandrashekhar-sharma-399189337/)
-- GitHub: [github-cyrus](https://github.com/github-cyrus)
+- **GitHub**: [github-cyrus](https://github.com/github-cyrus)
+- **LinkedIn**: [Chandrashekhar Sharma](https://www.linkedin.com/in/chandrashekhar-sharma-399189337/)
+- **Instagram**: [cyruss.zz](https://www.instagram.com/cyruss.zz/)
+- **Email**: cyrus.dev.ds@gmail.com
 
 ## 🙏 Acknowledgments
 
@@ -116,4 +117,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Particle effects by Particles.js
 
 ---
-Made with ❤️ by Chandrashekhar Sharma
+Made with ❤️ by Chandrashekhar Sharma | [Portfolio](https://github.com/github-cyrus)
