@@ -37,7 +37,9 @@
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Backup CDN for Themify Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-    <!-- Font Awesome for Programming Icons -->
+    <!-- Additional Themify Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/themify-icons@1.0.1-alpha.3/themify-icons.min.css">
+    <!-- Font Awesome for Backup Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Bootstrap + Meyawo main styles -->
     <link rel="stylesheet" href="assets/css/meyawo.css">
@@ -125,13 +127,14 @@
 
         .education-timeline {
             position: relative;
-            padding: 20px;
+            padding: 20px 0;
+            margin-left: 20px;
         }
 
         .education-timeline::before {
             content: '';
             position: absolute;
-            left: 20px;
+            left: 0;
             top: 0;
             height: 100%;
             width: 2px;
@@ -141,20 +144,62 @@
         .timeline-item {
             position: relative;
             padding-left: 45px;
-            margin-bottom: 30px;
+            margin-bottom: 50px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -2px;
+            left: -6px;
             top: 0;
-            width: 20px;
-            height: 20px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
             background: #695aa6;
-            border: 4px solid #fff;
+            border: 3px solid #fff;
             box-shadow: 0 0 0 2px rgba(105, 90, 166, 0.3);
+        }
+
+        .timeline-item h6 {
+            color: #695aa6;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .timeline-item .text-muted {
+            color: #666;
+        }
+
+        /* Animation for timeline items */
+        .timeline-item {
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.5s ease;
+        }
+
+        .timeline-item.aos-animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @media (max-width: 768px) {
+            .education-timeline {
+                margin-left: 10px;
+            }
+
+            .timeline-item {
+                padding-left: 35px;
+            }
         }
 
         .cert-link,
@@ -297,14 +342,16 @@
         }
 
         .cert-icon {
-            width: 60px;
-            height: 60px;
+            font-size: 2rem;
+            margin-right: 15px;
+            padding: 10px;
+            background: rgba(105, 90, 166, 0.1);
+            border-radius: 10px;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(105, 90, 166, 0.1);
-            border-radius: 50%;
-            margin-bottom: 20px;
         }
 
         .cert-icon i {
@@ -2120,6 +2167,318 @@
                 font-size: 0.9rem;
             }
         }
+
+        /* Add icon fallback styles */
+        .project-icon.ti-restaurant:before,
+        .project-icon.ti-missing:before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            content: "\f2e7"; /* Font Awesome utensils icon */
+        }
+        
+        /* Add fallbacks for other icons if needed */
+        .project-icon.ti-bar-chart:before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            content: "\f080";
+        }
+        
+        .project-icon.ti-dashboard:before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            content: "\f0e4";
+        }
+
+        /* Add icon fallback styles */
+        .project-icon.ti-database:before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            content: "\f1c0"; /* Font Awesome database icon */
+        }
+        
+        .project-icon.ti-line-chart:before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            content: "\f201"; /* Font Awesome chart line icon */
+        }
+
+        .education-header {
+            text-align: left !important;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(105, 90, 166, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .education-header .education-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            padding: 10px;
+            background: rgba(105, 90, 166, 0.1);
+            border-radius: 10px;
+            min-width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .education-header h5 {
+            margin: 0;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .education-card .card-body {
+            text-align: left;
+        }
+
+        .cert-list-horizontal {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+
+        .cert-item-horizontal {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .cert-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cert-icon {
+            width: 80px;
+            height: 80px;
+            background: #695aa6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .cert-icon i {
+            font-size: 35px;
+            color: #fff;
+        }
+
+        .cert-details {
+            margin-top: 15px;
+        }
+
+        .cert-details h6 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .cert-details p {
+            color: #666;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .cert-link {
+            display: inline-block;
+            background: #695aa6;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .cert-link:hover {
+            background: #574a8c;
+            transform: translateY(-2px);
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .cert-list-horizontal {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+                padding: 15px;
+            }
+
+            .cert-item-horizontal {
+                padding: 25px;
+            }
+
+            .cert-icon {
+                width: 70px;
+                height: 70px;
+            }
+
+            .cert-icon i {
+                font-size: 30px;
+            }
+        }
+
+        /* Add specific styles for the cert-icon */
+        .cert-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            padding: 10px;
+            background: rgba(105, 90, 166, 0.1);
+            border-radius: 10px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cert-icon i {
+            font-size: 24px;
+            color: #695aa6;
+        }
+
+        /* Add fallback for Themify icon */
+        .ti-medall-alt:before {
+            content: "\e64c";
+        }
+
+        /* Font Awesome fallback if Themify fails */
+        .ti-medall-alt.icon-fallback:before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            content: "\f5a2";
+        }
+
+        .achieve-list-horizontal {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .achieve-item-horizontal {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .achieve-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .achieve-content i {
+            font-size: 35px;
+            color: #695aa6;
+            background: rgba(105, 90, 166, 0.1);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .achieve-content h6 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .achieve-content p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .achieve-item-horizontal:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(105, 90, 166, 0.15);
+        }
+
+        .achieve-item-horizontal:hover .achieve-content i {
+            background: #695aa6;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .achieve-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .achieve-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(105, 90, 166, 0.1);
+        }
+
+        .achieve-header i {
+            font-size: 2rem;
+            margin-right: 15px;
+            padding: 10px;
+            background: rgba(105, 90, 166, 0.1);
+            border-radius: 10px;
+            color: #695aa6;
+        }
+
+        .achieve-header h5 {
+            margin: 0;
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .achieve-list-horizontal {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+                padding: 15px;
+            }
+
+            .achieve-item-horizontal {
+                padding: 25px;
+            }
+
+            .achieve-content i {
+                width: 70px;
+                height: 70px;
+                font-size: 30px;
+            }
+
+            .achieve-content h6 {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .achieve-list-horizontal {
+                grid-template-columns: 1fr;
+                padding: 10px;
+            }
+        }
     </style>
 
     <!-- Add Particles.js -->
@@ -2463,6 +2822,16 @@
                     }
                 });
             }
+
+            // Add this script to check if Themify icon is loaded and apply fallback if needed
+            function checkIconLoaded() {
+                const icon = document.querySelector('.ti-medall-alt');
+                const style = window.getComputedStyle(icon, ':before');
+                if (!style.content || style.content === 'none') {
+                    icon.classList.add('icon-fallback');
+                }
+            }
+            setTimeout(checkIconLoaded, 1000);
         });
     </script>
 </head>
@@ -2704,16 +3073,26 @@
         <div class="container text-center">
             <p class="section-subtitle">Academic & Research Projects</p>
             <h6 class="section-title mb-6">Featured Projects</h6>
+            
+            <!-- Project Category Filters -->
+            <div class="project-filters mb-5" data-aos="fade-up">
+                <button class="filter-btn active" data-category="all">All Projects</button>
+                <button class="filter-btn" data-category="dashboard">Dashboard Projects</button>
+                <button class="filter-btn" data-category="analytics">Analytics Projects</button>
+                <button class="filter-btn" data-category="data-science">Data Science Projects</button>
+                <button class="filter-btn" data-category="machine-learning">Machine Learning Projects</button>
+            </div>
+
             <!-- row -->
-            <div class="row">
-                <!-- Data Science & Machine Learning Projects -->
-                <div class="col-md-6 mb-4">
+            <div class="row project-grid">
+                <!-- Restaurant Recommendation System -->
+                <div class="col-md-6 mb-4 project-item machine-learning">
                     <div class="project-card">
                         <div class="project-header">
-                            <i class="ti-restaurant text-primary project-icon"></i>
+                            <i class="ti-restaurant fas fa-utensils text-primary project-icon"></i>
                             <h5>Restaurant Recommendation System</h5>
                         </div>
-                        <p class="text-muted mb-2">Data Science & Machine Learning | 2024</p>
+                        <p class="text-muted mb-2">Machine Learning | 2024</p>
                         <p class="card-text">
                             • Built a machine learning-powered recommendation system<br>
                             • Implemented user preference-based suggestions<br>
@@ -2728,28 +3107,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <i class="ti-bar-chart text-primary project-icon"></i>
-                            <h5>Machine Learning Models in Python</h5>
-                        </div>
-                        <p class="text-muted mb-2">Data Science & Machine Learning | 2024</p>
-                        <p class="card-text">
-                            • Developed various ML models for classification and regression<br>
-                            • Implemented model evaluation techniques<br>
-                            • Strengthened expertise in predictive analytics
-                        </p>
-                        <div class="mt-3">
-                            <span class="badge">Python</span>
-                            <span class="badge">Scikit-learn</span>
-                            <span class="badge">TensorFlow</span>
-                        </div>
-                        <a href="https://github.com/github-cyrus" class="project-link">View Project <i class="ti-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-4">
+                <!-- Ola Data Analytics Dashboard -->
+                <div class="col-md-6 mb-4 project-item dashboard analytics">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-dashboard text-primary project-icon"></i>
@@ -2770,7 +3129,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <!-- Amazon Sales Analysis Dashboard -->
+                <div class="col-md-6 mb-4 project-item dashboard analytics">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-shopping-cart text-primary project-icon"></i>
@@ -2791,7 +3151,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <!-- Sharpify - Image Upscaling -->
+                <div class="col-md-6 mb-4 project-item data-science machine-learning">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-image text-primary project-icon"></i>
@@ -2812,7 +3173,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <!-- AI Crisis Opinion Insights -->
+                <div class="col-md-6 mb-4 project-item data-science analytics">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-comment-alt text-primary project-icon"></i>
@@ -2833,7 +3195,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <!-- Data Pipeline Automation -->
+                <div class="col-md-6 mb-4 project-item data-science">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-layers text-primary project-icon"></i>
@@ -2854,7 +3217,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <!-- Customer Segmentation Analysis -->
+                <div class="col-md-6 mb-4 project-item analytics machine-learning">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-pie-chart text-primary project-icon"></i>
@@ -2875,10 +3239,11 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <!-- Time Series Forecasting -->
+                <div class="col-md-6 mb-4 project-item data-science machine-learning">
                     <div class="project-card">
                         <div class="project-header">
-                            <i class="ti-line-chart text-primary project-icon"></i>
+                            <i class="ti-line-chart fas fa-chart-line text-primary project-icon"></i>
                             <h5>Time Series Forecasting</h5>
                         </div>
                         <p class="text-muted mb-2">Data Science | 2024</p>
@@ -2896,7 +3261,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <!-- Web Analytics Dashboard -->
+                <div class="col-md-6 mb-4 project-item dashboard analytics">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-layout text-primary project-icon"></i>
@@ -2917,10 +3283,14 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <!-- Add category classes to remaining project cards following the same pattern -->
+                <!-- ... existing project cards with added category classes ... -->
+
+                <!-- Add remaining projects with categories -->
+                <div class="col-md-6 mb-4 project-item data-science">
                     <div class="project-card">
                         <div class="project-header">
-                            <i class="ti-database text-primary project-icon"></i>
+                            <i class="ti-database fas fa-database text-primary project-icon"></i>
                             <h5>Database Optimization</h5>
                         </div>
                         <p class="text-muted mb-2">Database Management | 2024</p>
@@ -2938,7 +3308,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4 project-item data-science">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-cloud text-primary project-icon"></i>
@@ -2959,7 +3329,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4 project-item data-science">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-shield text-primary project-icon"></i>
@@ -2980,7 +3350,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4 project-item analytics dashboard">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-mobile text-primary project-icon"></i>
@@ -3001,7 +3371,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4 project-item analytics dashboard machine-learning">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-world text-primary project-icon"></i>
@@ -3022,7 +3392,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4 project-item machine-learning data-science">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-paint-bucket text-primary project-icon"></i>
@@ -3043,7 +3413,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4 project-item machine-learning data-science">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-headphone text-primary project-icon"></i>
@@ -3064,7 +3434,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4 project-item analytics dashboard">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-location-arrow text-primary project-icon"></i>
@@ -3085,7 +3455,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4 project-item analytics dashboard">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-shopping-cart-full text-primary project-icon"></i>
@@ -3106,7 +3476,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4 project-item analytics dashboard machine-learning">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-pulse text-primary project-icon"></i>
@@ -3127,7 +3497,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4 project-item analytics dashboard">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-car text-primary project-icon"></i>
@@ -3148,7 +3518,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4 project-item analytics machine-learning">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-credit-card text-primary project-icon"></i>
@@ -3169,7 +3539,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4 project-item analytics data-science">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-announcement text-primary project-icon"></i>
@@ -3190,7 +3560,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4 project-item analytics dashboard">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-game text-primary project-icon"></i>
@@ -3211,7 +3581,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4 project-item analytics dashboard">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-book text-primary project-icon"></i>
@@ -3232,7 +3602,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4 project-item analytics dashboard">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-settings text-primary project-icon"></i>
@@ -3253,7 +3623,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4 project-item analytics data-science">
                     <div class="project-card">
                         <div class="project-header">
                             <i class="ti-world text-primary project-icon"></i>
@@ -3275,6 +3645,129 @@
                 </div>
             </div><!-- end of row -->
         </div><!-- end of container -->
+
+        <style>
+            /* Project Filter Styles */
+            .project-filters {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+                margin-bottom: 40px;
+            }
+
+            .filter-btn {
+                padding: 10px 25px;
+                border: 2px solid #695aa6;
+                border-radius: 30px;
+                background: transparent;
+                color: #695aa6;
+                font-weight: 600;
+                font-size: 0.95rem;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+
+            .filter-btn:hover,
+            .filter-btn.active {
+                background: #695aa6;
+                color: #fff;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(105, 90, 166, 0.2);
+            }
+
+            /* Project Grid Styles */
+            .project-grid {
+                position: relative;
+                min-height: 400px;
+            }
+
+            .project-item {
+                transition: all 0.5s ease;
+                transform-origin: top center;
+            }
+
+            .project-item.hidden {
+                display: none;
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            /* Animation Classes */
+            .fade-in {
+                animation: fadeIn 0.5s ease forwards;
+            }
+
+            .fade-out {
+                animation: fadeOut 0.5s ease forwards;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: scale(0.8);
+                }
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            @keyframes fadeOut {
+                from {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+                to {
+                    opacity: 0;
+                    transform: scale(0.8);
+                }
+            }
+
+            /* Responsive Styles */
+            @media (max-width: 768px) {
+                .filter-btn {
+                    padding: 8px 20px;
+                    font-size: 0.9rem;
+                }
+
+                .project-filters {
+                    gap: 10px;
+                }
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const filterBtns = document.querySelectorAll('.filter-btn');
+                const projectItems = document.querySelectorAll('.project-item');
+
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        // Update active button
+                        filterBtns.forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+
+                        const category = this.dataset.category;
+
+                        // Filter projects
+                        projectItems.forEach(item => {
+                            if (category === 'all' || item.classList.contains(category)) {
+                                item.classList.remove('hidden');
+                                item.classList.add('fade-in');
+                                item.classList.remove('fade-out');
+                            } else {
+                                item.classList.add('fade-out');
+                                item.classList.remove('fade-in');
+                                setTimeout(() => {
+                                    item.classList.add('hidden');
+                                }, 500);
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
     </section><!-- end of portfolio section -->
 
     <!-- certifications section -->
@@ -3294,56 +3787,82 @@
                         <div class="cert-list-horizontal">
                             <div class="cert-item-horizontal" data-aos="fade-up">
                                 <div class="cert-content">
-                                    <i class="ti-crown"></i>
-                                    <div>
+                                    <div class="cert-icon">
+                                        <i class="fas fa-crown"></i>
+                                    </div>
+                                    <div class="cert-details">
                                         <h6>Data Science Tools</h6>
                                         <p>Issuer: Cognitive Class | Issued: March 2025</p>
                                         <p class="text-muted">Skills: Data Science, Python, R, Jupyter Notebook, Pandas, NumPy, Scikit-learn, TensorFlow, Tableau, Power BI, SQL, Apache Spark</p>
-                                        <a href="https://www.linkedin.com/in/chandrashekhar-sharma-399189337/details/certifications/" class="cert-link" target="_blank">View Certificate <i class="ti-arrow-right"></i></a>
+                                        <a href="https://www.linkedin.com/in/chandrashekhar-sharma-399189337/details/certifications/" class="cert-link" target="_blank">View Certificate</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="cert-item-horizontal" data-aos="fade-up" data-aos-delay="100">
                                 <div class="cert-content">
-                                    <i class="ti-google"></i>
-                                    <div>
+                                    <div class="cert-icon">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <div class="cert-details">
                                         <h6>Deep Learning with TensorFlow</h6>
                                         <p>Issuer: Cognitive Class | Issued: March 2025</p>
                                         <p class="text-muted">Skills: Deep Learning, TensorFlow, Neural Networks, AI Model Development</p>
-                                        <a href="https://www.linkedin.com/in/chandrashekhar-sharma-399189337/details/certifications/" class="cert-link">View Certificate <i class="ti-arrow-right"></i></a>
+                                        <a href="https://www.linkedin.com/in/chandrashekhar-sharma-399189337/details/certifications/" class="cert-link">View Certificate</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="cert-item-horizontal" data-aos="fade-up" data-aos-delay="200">
                                 <div class="cert-content">
-                                    <i class="ti-bar-chart"></i>
-                                    <div>
+                                    <div class="cert-icon">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </div>
+                                    <div class="cert-details">
                                         <h6>Data Visualization with Python</h6>
-                                        <p>Issuer: IBM | Issued: March 2024</p>
+                                        <p>Issuer: IBM | Issued: 
+                                            <br>March 2024</p>
                                         <p class="text-muted">Skills: Python, Matplotlib, Seaborn, Plotly, Data Visualization</p>
-                                        <a href="https://www.linkedin.com/in/chandrashekhar-sharma-399189337/details/certifications/" class="cert-link">View Certificate <i class="ti-arrow-right"></i></a>
+                                        <a href="https://www.linkedin.com/in/chandrashekhar-sharma-399189337/details/certifications/" class="cert-link">View Certificate</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="cert-item-horizontal" data-aos="fade-up" data-aos-delay="300">
                                 <div class="cert-content">
-                                    <i class="ti-server"></i>
-                                    <div>
+                                    <div class="cert-icon">
+                                        <i class="fas fa-laptop-code"></i>
+                                    </div>
+                                    <div class="cert-details">
                                         <h6>Problem Solving & Python</h6>
                                         <p>Issuer: HackerRank | Issued: September 2024</p>
                                         <p class="text-muted">Skills: Algorithmic Thinking, Problem Solving, Python Programming</p>
-                                        <a href="https://www.linkedin.com/in/chandrashekhar-sharma-399189337/details/certifications/" class="cert-link">View Certificate <i class="ti-arrow-right"></i></a>
+                                        <a href="https://www.linkedin.com/in/chandrashekhar-sharma-399189337/details/certifications/" class="cert-link">View Certificate</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="cert-item-horizontal" data-aos="fade-up" data-aos-delay="400">
                                 <div class="cert-content">
-                                    <i class="ti-robot"></i>
-                                    <div>
+                                    <div class="cert-icon">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <div class="cert-details">
                                         <h6>Generative AI</h6>
-                                        <p>Issuer: Great Learning | Issued: March 2024</p>
+                                        <p>Issuer: Great Learning | Issued: 
+                                            <br>March 2024</p>
                                         <p class="text-muted">Skills: Artificial Intelligence, Generative Models</p>
-                                        <a href="https://www.linkedin.com/in/chandrashekhar-sharma-399189337/details/certifications/" class="cert-link">View Certificate <i class="ti-arrow-right"></i></a>
+                                        <a href="https://www.linkedin.com/in/chandrashekhar-sharma-399189337/details/certifications/" class="cert-link">View Certificate</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cert-item-horizontal" data-aos="fade-up" data-aos-delay="500">
+                                <div class="cert-content">
+                                    <div class="cert-icon">
+                                        <i class="fas fa-chart-pie"></i>
+                                    </div>
+                                    <div class="cert-details">
+                                        <h6>Data Visualization with Power BI & Tableau</h6>
+                                        <p>Issuer: Microsoft & Tableau | Issued: 
+                                            <br>March 2024</p>
+                                        <p class="text-muted">Skills: Power BI, Tableau, Data Visualization, Dashboard Design, Business Intelligence</p>
+                                        <a href="https://www.linkedin.com/in/chandrashekhar-sharma-399189337/details/certifications/" class="cert-link">View Certificate</a>
                                     </div>
                                 </div>
                             </div>
@@ -3397,6 +3916,24 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="achieve-item-horizontal" data-aos="fade-up" data-aos-delay="400">
+                                <div class="achieve-content">
+                                    <i class="fas fa-trophy"></i>
+                                    <div>
+                                        <h6>Hackathon Winner</h6>
+                                        <p>Won first place in college-level Data Science Hackathon for developing an innovative ML-based solution for healthcare predictions (2023)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="achieve-item-horizontal" data-aos="fade-up" data-aos-delay="500">
+                                <div class="achieve-content">
+                                    <i class="fas fa-award"></i>
+                                    <div>
+                                        <h6>Open Source Contribution</h6>
+                                        <p>Active contributor to open-source data science projects with 50+ merged pull requests and recognized as a valuable community member on GitHub</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -3406,9 +3943,10 @@
 
     <!-- education and experience section -->
     <section class="section" id="education">
-        <div class="container text-center">
-            <p class="section-subtitle">Academic Background</p>
-            <h6 class="section-title mb-6">Education & Experience</h6>
+        <div class="container">
+            <p class="section-subtitle text-center">Academic Background</p>
+            <h6 class="section-title mb-6 text-center">Education & Experience</h6>
+            
             <div class="row">
                 <div class="col-md-6" data-aos="fade-right">
                     <div class="education-card mb-4">
@@ -3515,11 +4053,22 @@
                                 <h5>Send Message</h5>
                             </div>
 
-                            <form id="contactForm" class="contact-form">
+                            <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                                <!-- Web3Forms Access Key -->
+                                <input type="hidden" name="access_key" value="f00362ea-6508-4bf0-a84e-c53ba729bfe6">
+                                <!-- Optional: Subject for email -->
+                                <input type="hidden" name="subject" value="New Contact Form Submission - Portfolio">
+                                <!-- Optional: From Name -->
+                                <input type="hidden" name="from_name" value="Portfolio Contact Form">
+                                <!-- Optional: Redirect URL -->
+                                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                                <!-- Honeypot field to prevent spam -->
+                                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <div class="floating-input-group">
-                                            <input type="text" class="floating-input" id="name" required>
+                                            <input type="text" class="floating-input" id="name" name="name" required>
                                             <label for="name">Name</label>
                                             <div class="input-underline"></div>
                                             <i class="fas fa-user input-icon"></i>
@@ -3527,7 +4076,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <div class="floating-input-group">
-                                            <input type="email" class="floating-input" id="email" required>
+                                            <input type="email" class="floating-input" id="email" name="email" required>
                                             <label for="email">Email</label>
                                             <div class="input-underline"></div>
                                             <i class="fas fa-envelope input-icon"></i>
@@ -3538,7 +4087,7 @@
 
                                 <div class="form-group">
                                     <div class="floating-input-group">
-                                        <input type="text" class="floating-input" id="subject" required>
+                                        <input type="text" class="floating-input" id="subject" name="subject" required>
                                         <label for="subject">Subject</label>
                                         <div class="input-underline"></div>
                                         <i class="fas fa-tag input-icon"></i>
@@ -3547,7 +4096,7 @@
 
                                 <div class="form-group">
                                     <div class="floating-input-group">
-                                        <textarea class="floating-input" id="message" rows="4" required></textarea>
+                                        <textarea class="floating-input" id="message" name="message" rows="4" required></textarea>
                                         <label for="message">Message</label>
                                         <div class="input-underline"></div>
                                         <i class="fas fa-comment-alt input-icon"></i>
@@ -3994,6 +4543,16 @@
                     }
                 });
             }
+
+            // Add this script to check if Themify icon is loaded and apply fallback if needed
+            function checkIconLoaded() {
+                const icon = document.querySelector('.ti-medall-alt');
+                const style = window.getComputedStyle(icon, ':before');
+                if (!style.content || style.content === 'none') {
+                    icon.classList.add('icon-fallback');
+                }
+            }
+            setTimeout(checkIconLoaded, 1000);
         });
     </script>
 </body>
